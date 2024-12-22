@@ -1,5 +1,10 @@
 # Meeting and Mail Crew
 
+![flow](https://github.com/user-attachments/assets/723e38e5-5580-464f-ba44-fdefc39f5e6e)
+
+
+
+
 ## Overview
 
 This project aims to automate the process of generating meeting minutes, summarizing key discussions, and creating action plans. It utilizes a combination of AI agents and tools to analyze audio recordings, extract relevant information, and generate concise output.
