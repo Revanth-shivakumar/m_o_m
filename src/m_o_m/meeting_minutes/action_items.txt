@@ -1,0 +1,3 @@
+- Action item 1: Develop a detailed project plan
+- Action item 2: Assign team members to specific tasks
+- Action item 3: Conduct a thorough risk assessment
