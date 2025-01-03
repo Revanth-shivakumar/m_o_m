@@ -6,8 +6,6 @@ from crewai.flow.flow import Flow, listen, start # type: ignore
 
 import librosa
 
-import whisper
-
 from pydub import AudioSegment
 
 from pydub.utils import make_chunks
@@ -17,6 +15,11 @@ from pathlib import Path
 from crews.mom_crew.meeting_minutes_crew import MeetingMinutesCrew
 
 from crews.gmail.gmail import Gmail
+
+import assemblyai as aai
+
+aai.settings.api_key = ""
+transcriber = aai.Transcriber()
 
 class MeetingMinutesState(BaseModel):
     transcript: str = ""
@@ -36,7 +39,6 @@ class MeetingMinutesFlow(Flow[MeetingMinutesState]):
 
         chunk_length_ms=60000
         chunks=make_chunks(audio,chunk_length_ms)
-        model=whisper.load_model('turbo')
         full_transcription = ""
         for i, chunk in enumerate(chunks):
             print(f"Transcribing chunk {i+1}/{len(chunks)}")
@@ -44,10 +46,10 @@ class MeetingMinutesFlow(Flow[MeetingMinutesState]):
             chunk.export(chunk_path, format="wav")
     
             # Load WAV file as NumPy array
-            audio, sr = librosa.load(chunk_path, sr=None)
+        
 
             # Pass the audio array to the model
-            transcription = model.transcribe(audio)
+            transcription = transcriber.transcribe(audio)
             print(transcription)
             full_transcription += transcription['text'] + " "
         self.state.transcript = full_transcription
