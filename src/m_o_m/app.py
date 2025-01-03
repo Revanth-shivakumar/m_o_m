@@ -50,7 +50,12 @@ class MeetingMinutesFlow(Flow[MeetingMinutesState]):
             transcription = model.transcribe(audio)
             print(transcription)
             full_transcription += transcription['text'] + " "
-
+        self.state.transcript = full_transcription
+        meeting_minutes_folder = SCRIPT_DIR / "meeting_minutes"
+        meeting_minutes_folder.mkdir(exist_ok=True)
+        transcript_path = meeting_minutes_folder / "transcript.md"
+        with open(transcript_path, "w") as f:
+            f.write(self.state.transcript)
             
         
     @listen(transcribe_meeting)
@@ -63,14 +68,14 @@ class MeetingMinutesFlow(Flow[MeetingMinutesState]):
         
         meeting_minutes=crew.crew().kickoff(inputs)
         self.state.meeting_minutes=meeting_minutes
-    @listen(generate_meeting_minutes)
-    def create_draft(self):
-        crew=Gmail()
-        inputs={
-            "body":self.state.meeting_minutes
-            }
-        draft_crew=crew.crew().kickoff(inputs)
-        print(draft_crew)
+    # @listen(generate_meeting_minutes)
+    # def create_draft(self):
+    #     crew=Gmail()
+    #     inputs={
+    #         "body":self.state.meeting_minutes
+    #         }
+    #     draft_crew=crew.crew().kickoff(inputs)
+    #     print(draft_crew)
         
     def kickoff():
         meeting_minutes_flow = MeetingMinutesFlow()

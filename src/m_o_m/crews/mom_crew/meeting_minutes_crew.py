@@ -13,24 +13,25 @@ class MeetingMinutesCrew:
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
     OUTPUTS = ["summary", "actions", "mood"]
-    ollama_llm=LLM(
-        model='ollama/llama3.1:8b',
-        base_url='http://localhost:11434',
-    )
+    llm = LLM(
+    model="gemini/gemini-1.5-pro",
+    temperature=0.7
+)
+
 
     @agent
     def summarizer(self) -> Agent:
         return Agent(
             config=self.agents_config["summarizer"],
             tools=[file_writer_tool_summary,file_writer_tool_actions,file_writer_tool_mood],
-            llm=self.ollama_llm
+            llm=self.llm
         )
     
     @agent
     def writer(self) -> Agent:
         return Agent(
             config=self.agents_config["writer"],
-            llm=self.ollama_llm
+            llm=self.llm
         )
   
     @task
