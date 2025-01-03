@@ -2,7 +2,7 @@ from typing import Type
 
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
-from gmail_utility import authenticate_gmail,send_email,create_draft,create_message
+from .gmail_utility import authenticate_gmail,create_draft,create_message
 
 
 class GmailToolInput(BaseModel):

@@ -25,7 +25,7 @@ crewai install
 
 - Modify `src/m_o_m/config/agents.yaml` to define your agents
 - Modify `src/m_o_m/config/tasks.yaml` to define your tasks
-- Modify `src/m_o_m/crew.py` to add your own logic, tools and specific args
+- Modify `src/m_o_m/crew.py` to add your own logic, tools, and specific args
 - Modify `src/m_o_m/main.py` to add custom inputs for your agents and tasks
 
 ## Running the Project
@@ -38,7 +38,7 @@ crewai run
 
 This command initializes the M-O-M Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+This example, unmodified, will create a `report.md` file with the output of research on LLMs in the root folder.
 
 ## Understanding Your Crew
 
@@ -46,7 +46,7 @@ The M-O-M Crew is composed of multiple AI agents, each with unique roles, goals,
 
 ## Support
 
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
+For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI:
 
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)

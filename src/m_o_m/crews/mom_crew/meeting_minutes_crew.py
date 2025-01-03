@@ -5,9 +5,9 @@ from crewai_tools import FileWriterTool
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
-file_writer_tool_summary=FileWriterTool(file_name="meeting_minutes_summary.txt",directory='meeting_minutes')
-file_writer_tool_actions=FileWriterTool(file_name="meeting_minutes_actions.txt",directory='meeting_minutes')
-file_writer_tool_mood=FileWriterTool(file_name="meeting_minutes_mood.txt",directory='meeting_minutes')
+file_writer_tool_summary=FileWriterTool(file_name="meeting_minutes_summary.txt",directory='meeting_minutes',overwrite=True)
+file_writer_tool_actions=FileWriterTool(file_name="meeting_minutes_actions.txt",directory='meeting_minutes',overwrite=True)
+file_writer_tool_mood=FileWriterTool(file_name="meeting_minutes_mood.txt",directory='meeting_minutes',overwrite=True)
 @CrewBase
 class MeetingMinutesCrew:
     agents_config = "config/agents.yaml"

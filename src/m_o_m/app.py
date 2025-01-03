@@ -73,9 +73,9 @@ class MeetingMinutesFlow(Flow[MeetingMinutesState]):
         print(draft_crew)
         
     def kickoff():
-    meeting_minutes_flow = MeetingMinutesFlow()
-    meeting_minutes_flow.plot()
-    meeting_minutes_flow.kickoff()
+        meeting_minutes_flow = MeetingMinutesFlow()
+        meeting_minutes_flow.plot()
+        meeting_minutes_flow.kickoff()
    
 
 
