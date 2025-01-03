@@ -1,6 +1,13 @@
-# {{crew_name}} Crew
+# Meeting and Mail Crew
 
-Welcome to the {{crew_name}} Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+![flow](https://github.com/user-attachments/assets/723e38e5-5580-464f-ba44-fdefc39f5e6e)
+
+
+
+
+## Overview
+
+This project aims to automate the process of generating meeting minutes, summarizing key discussions, and creating action plans. It utilizes a combination of AI agents and tools to analyze audio recordings, extract relevant information, and generate concise output.
 
 ## Installation
 
@@ -25,7 +32,7 @@ crewai install
 
 - Modify `src/m_o_m/config/agents.yaml` to define your agents
 - Modify `src/m_o_m/config/tasks.yaml` to define your tasks
-- Modify `src/m_o_m/crew.py` to add your own logic, tools, and specific args
+- Modify `src/m_o_m/crew.py` to add your own logic, tools and specific args
 - Modify `src/m_o_m/main.py` to add custom inputs for your agents and tasks
 
 ## Running the Project
@@ -38,15 +45,27 @@ crewai run
 
 This command initializes the M-O-M Crew, assembling the agents and assigning them tasks as defined in your configuration.
 
-This example, unmodified, will create a `report.md` file with the output of research on LLMs in the root folder.
+This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
-## Understanding Your Crew
+## Tools and Technologies
 
-The M-O-M Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+* CrewAI
+* LangChain
+* Ollama
+* Llama 8b
+* Whisper Turbo
+* Gmail API
+
+## Benefits
+
+* **Time-saving:** Automates the manual process of writing meeting minutes.
+* **Accuracy:** Ensures accurate and comprehensive meeting summaries.
+* **Actionable Insights:** Provides clear action plans with timelines and responsibilities.
+* **Improved Communication:** Facilitates effective communication and follow-up.
 
 ## Support
 
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI:
+For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
 
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
