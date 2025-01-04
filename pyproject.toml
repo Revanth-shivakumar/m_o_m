@@ -5,7 +5,7 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<=3.13"
 blas = "1.0"
 brotli-python = "1.0.9"
 bzip2 = "1.0.8"
