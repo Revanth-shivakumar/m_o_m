@@ -62,14 +62,3 @@ This example, unmodified, will run the create a `report.md` file with the output
 * **Accuracy:** Ensures accurate and comprehensive meeting summaries.
 * **Actionable Insights:** Provides clear action plans with timelines and responsibilities.
 * **Improved Communication:** Facilitates effective communication and follow-up.
-
-## Support
-
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
-
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
